@@ -1,0 +1,13 @@
+FROM ipygrpc
+
+# Server will run on 50051
+EXPOSE 50051
+
+COPY *.proto /protos
+COPY greeter_server.py /work
+
+# This step is optional, but moves gRPC binding compilation to happen once when the container is
+# built rather than inside the container as part of the startup script
+RUN /build_bindings.sh
+
+ENTRYPOINT ["/ipygrpc.sh", "greeter_server.py"]
