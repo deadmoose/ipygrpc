@@ -1,4 +1,4 @@
-FROM ipygrpc
+FROM deadmoose/ipygrpc
 
 COPY *.proto /protos
 

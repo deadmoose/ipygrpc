@@ -1,4 +1,4 @@
-FROM ipygrpc
+FROM deadmoose/ipygrpc
 
 # Server will run on 50051
 EXPOSE 50051
